@@ -14,6 +14,33 @@ export const homeData = {
       secondary: "Tentang Surau BMC"
     }
   },
+  // --- DATA BARU UNTUK PROGRAM UNGGULAN ---
+  programs: {
+    title: "Program Unggulan",
+    items: [
+      {
+        id: 1,
+        title: "Lumbung Qur'an",
+        image: "/history.jpg", // Menggunakan gambar yang sudah ada sebagai dummy sementara
+      },
+      {
+        id: 2,
+        title: "Rumah Qur'an Syamil Madani",
+        image: "/history.jpg",
+      },
+      {
+        id: 3,
+        title: "Yatim Bahagia",
+        image: "/history.jpg",
+      },
+      {
+        id: 4,
+        title: "Sentra Masjid Indonesia",
+        image: "/history.jpg",
+      }
+    ]
+  },
+  // ----------------------------------------
   stats: [
     { value: "5", label: "Pilar Kemakmuran" },
     { value: "10", label: "Santri Mukim Qur'an" },
