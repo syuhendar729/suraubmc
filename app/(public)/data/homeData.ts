@@ -8,7 +8,7 @@ export const homeData = {
       highlight: "Peradaban Pemuda",
       line2: "Berbasis Al-Qur'an & Masjid"
     },
-    description: "Surau Berkah Madani Center (Surau BMC) bukan sekadar tempat shalat — ini rumah tumbuhnya generasi yang cinta Qur'an, cinta masjid, terdidik & terpimpin, serta mandiri membangun dampak bagi umat.",
+    description: "Surau Berkah Madani Center (Surau BMC) bukan sekadar masjid atau tempat pembelajaran agama biasa, tetapi sedang dibangun sebagai pusat inkubator peradaban pemuda berbasis Al-Qur'an, Masjid, kepemimpinan, kewirausahaan, dan difasilitasi teknologi modern (Smart Masjid 5.0 yang ter Integrated AI).",
     buttons: {
       primary: "Jelajahi 5 Pilar →",
       secondary: "Tentang Surau BMC"

@@ -17,7 +17,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-surau-dark-green p-4 px-6 md:p-6 md:px-12 lg:px-20 border-b border-surau-light-green/30 relative z-50">
+    <nav className="bg-surau-dark-green p-4 px-6 md:p-6 md:px-12 lg:px-20 border-b border-surau-light-green/30 sticky top-0 z-50">
       <div className="flex items-center justify-between">
         
         {/* Bagian Kiri: Logo dan Nama */}

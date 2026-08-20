@@ -3,14 +3,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { contactData } from '../data/contactData';
+
 export default function ContactPage() {
   // Data dummy untuk tautan kontak
-  const contactLinks = {
-    whatsapp: "https://wa.me/6281234567890", // Ganti dengan nomor asli
-    instagram: "https://instagram.com/suraubmc", // Ganti dengan username asli
-    volunteer: "/pendaftaran-santri",
-    goDigital: "/masjid-go-digital"
-  };
 
   return (
     <div className="min-h-screen bg-surau-cream pb-24">
@@ -56,7 +52,7 @@ export default function ContactPage() {
             
             {/* Kartu WhatsApp */}
             <a 
-              href={contactLinks.whatsapp}
+              href={contactData.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-center justify-center gap-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
@@ -74,7 +70,7 @@ export default function ContactPage() {
 
             {/* Kartu Instagram */}
             <a 
-              href={contactLinks.instagram}
+              href={contactData.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-center justify-center gap-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
@@ -94,7 +90,7 @@ export default function ContactPage() {
 
           {/* Baris 2: Daftar Jadi Santri / Volunteer */}
           <Link 
-            href={contactLinks.volunteer}
+            href={contactData.volunteer}
             className="group bg-surau-dark-green rounded-3xl p-6 md:p-8 flex items-center justify-between gap-4 shadow-lg hover:shadow-2xl hover:bg-[#525d3b] hover:-translate-y-1 transition-all duration-300"
           >
             <div className="flex items-center gap-6">
@@ -116,7 +112,7 @@ export default function ContactPage() {
 
           {/* Baris 3: Ajak Masjidmu Go-Digital */}
           <Link 
-            href={contactLinks.goDigital}
+            href={contactData.goDigital}
             className="group bg-surau-yellow rounded-3xl p-6 md:p-8 flex items-center justify-between gap-4 shadow-lg hover:shadow-2xl hover:bg-[#eab308] hover:-translate-y-1 transition-all duration-300"
           >
             <div className="flex items-center gap-6">

@@ -92,14 +92,14 @@ export const locationData = {
     },
     {
       id: 2,
-      title: "Sentra Masjid Indonesia",
+      title: "Baitul Muamalah - Sentra Masjid Indonesia",
       address: "Jl. Dempo No. 20, Labuhan Ratu, Bandar Lampung",
       note: "Perlengkapan & pelayanan masjid",
       iconName: "store"
     },
     {
       id: 3,
-      title: "Sentra Karpet",
+      title: "Baitul Muamalah - Sentra Karpet",
       address: "Jl. Pelita 1 No. 21, Kedaton, Bandar Lampung",
       note: "Karpet meteran, tile & alas",
       iconName: "leaf"

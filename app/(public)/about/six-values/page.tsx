@@ -1,4 +1,4 @@
-import { sixValuesData } from "@/app/data/aboutData";
+import { sixValuesData } from "@/app/(public)/data/aboutData";
 
 export default function SixValuesPage() {
   const { header, values } = sixValuesData;

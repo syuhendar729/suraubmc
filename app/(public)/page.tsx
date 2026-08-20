@@ -34,7 +34,7 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 mb-10">
-            <Link href="/about/location" className="bg-surau-dark-green hover:bg-[#525d3b] text-surau-cream font-semibold px-8 py-3 rounded-full transition-all shadow-lg">
+            <Link href="/about/five-pillars" className="bg-surau-dark-green hover:bg-[#525d3b] text-surau-cream font-semibold px-8 py-3 rounded-full transition-all shadow-lg">
               {hero.buttons.primary}
             </Link>
             <Link href="/about/history" className="bg-transparent border-2 border-surau-dark-green text-surau-dark-green hover:bg-surau-dark-green hover:text-surau-cream font-medium px-8 py-3 rounded-full transition-all">
