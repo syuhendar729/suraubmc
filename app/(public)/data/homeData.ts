@@ -2,10 +2,10 @@
 
 export const homeData = {
   heroLeft: {
-    title: "Di sinilah tempat lahirnya para penghafal Al-Qur'an",
-    description: "Insya Allah jika kita bergerak bersama maka semakin terasa kuat hulu awal sampai hari ini kita berdiri.",
+    title: "Pusat Inkubator Peradaban Pemuda Berbasis Al-Qur'an & Masjid",
+    description: "Surau Berkah Madani Center (Surau BMC) bukan sekadar masjid atau tempat pembelajaran agama biasa, melainkan pusat inkubator pemuda berbasis Al-Qur'an, masjid, kepemimpinan, dan kewirausahaan — difasilitasi teknologi Smart Masjid 5.0 yang terintegrasi AI.",
     buttonText: "Selengkapnya →",
-    buttonLink: "/about/history",
+    buttonLink: "/about#sejarah",
     image: "/history.jpg"
   },
   heroRight: {
@@ -15,35 +15,111 @@ export const homeData = {
     buttonLink: "/contact"
   },
   programs: {
-    title: "Bersama Kita Bisa Bantu Sesama",
-    description: "Surau BMC terus berupaya menyebar manfaat kepada penerima yang benar-benar membutuhkan sehingga tepat sasaran.",
+    title: "Visi Utama Kami",
+    description: "Surau BMC ingin menghadirkan model masjid yang tidak hanya menjadi tempat ibadah, tetapi menjadi pusat lahirnya SDM unggul.",
     items: [
-      { id: 1, title: "Amal Sosial", desc: "Menebar kebaikan sebanyak mungkin untuk membantu sesama", iconName: "social" },
-      { id: 2, title: "Amal Pendidikan", desc: "Membuat sistem pendidikan yang jauh lebih baik dari sebelumnya", iconName: "education" },
-      { id: 3, title: "Amal Dakwah", desc: "Mengamalkan nilai dakwah sesuai syariat di kalangan masyarakat luas", iconName: "dakwah" }
-    ]
-  },
-  
-  // --- DATA BARU: PROGRAM KAMI (Tanpa Donasi, dengan Filter) ---
-  ourPrograms: {
-    title: "Program Kami",
-    description: "Berbagai inisiatif kegiatan kebaikan di Surau BMC.",
-    filters: [
-      { id: 'semua', title: 'Semua Program', desc: 'Seluruh program amal Surau BMC' },
-      { id: 'sosial', title: 'Amal Sosial', desc: 'Kegiatan sosial seperti bantuan dan santunan' },
-      { id: 'pendidikan', title: 'Amal Pendidikan', desc: 'Kegiatan edukasi dan pendidikan' },
-      { id: 'dakwah', title: 'Amal Dakwah', desc: 'Kegiatan keagamaan dan dakwah' },
-      { id: 'event', title: 'Event', desc: 'Kegiatan Event Surau BMC' },
-    ],
-    items: [
-      { id: 1, title: 'Pembinaan Karakter Pemuda', category: 'pendidikan', desc: 'Program pendidikan rutin pekanan untuk membentuk karakter Islami pemuda yang tangguh dan mandiri.', image: '/history.jpg', link: '#' },
-      { id: 2, title: 'Penyaluran Santunan Yatim', category: 'sosial', desc: 'Kegiatan penyaluran bantuan pangan dan pendidikan untuk anak yatim di sekitar lingkungan Surau BMC.', image: '/history.jpg', link: '#' },
-      { id: 3, title: 'Kajian Rutin Muslimah', category: 'dakwah', desc: 'Majelis taklim khusus muslimah untuk memperdalam ilmu agama dan merajut ukhuwah.', image: '/history.jpg', link: '#' },
-      { id: 4, title: 'Tabligh Akbar Muharram', category: 'event', desc: 'Acara besar tahunan menyambut tahun baru Islam yang terbuka untuk seluruh masyarakat umum.', image: '/history.jpg', link: '#' },
+      { id: 1, title: "Cinta Al-Qur'an", desc: "Al-Qur'an jadi pusat aktivitas harian pemuda, dari tahfidz hingga kajian rutin yang membentuk ruh spiritual.", iconName: "education" },
+      { id: 2, title: "Cinta Masjid", desc: "Masjid dihidupkan sebagai pusat ibadah dan peradaban, bukan sekadar tempat singgah.", iconName: "dakwah" },
+      { id: 3, title: "Terdidik, Terpimpin & Mandiri", desc: "Dibina lewat pendidikan dan kepemimpinan terstruktur agar tumbuh mandiri dan berdampak bagi umat.", iconName: "social" }
     ]
   },
 
-  // --- DATA BARU: PROGRAM DONASI (Kartu Mendatar dengan Progress Bar) ---
+  // --- PROGRAM KAMI: dipisah berdasarkan 5 pilar kemakmuran Surau BMC ---
+  ourPrograms: {
+    title: "Program Kami",
+    description: "Program-program Surau BMC yang dijalankan melalui pilar-pilar kemakmuran organisasi (Panca Baitul).",
+    filters: [
+      { id: 'semua', title: 'Semua Program', desc: 'Seluruh program di lingkungan Surau BMC' },
+      { id: 'tarbiyah', title: 'Baitul Tarbiyah', desc: "Pusat pendidikan Qur'an dan pendidikan umum" },
+      { id: 'dakwah', title: 'Baitud Dakwah', desc: 'Syiar Islam lewat dakwah bil lisan dan bil hal' },
+      { id: 'muamalah', title: 'Baitul Muamalah', desc: 'Kemandirian ekonomi lewat unit usaha profesional' },
+      { id: 'maal', title: 'Baitul Maal', desc: 'Pengelolaan dana ZISWAF umat secara transparan' },
+    ],
+    items: [
+      {
+        id: 1,
+        title: "Lumbung Qur'an",
+        category: 'tarbiyah',
+        desc: "Pondok tahfidz untuk anak muda usia 16-25 tahun sebagai santri mukim penghafal Qur'an yang hamilul Qur'an dan jago bisnis. Saat ini sudah hadir 10 santri mukim terpilih.",
+        image: '/history.jpg',
+        link: '/program#baitul-tarbiyah'
+      },
+      {
+        id: 2,
+        title: "Rumah Qur'an Syamil Madani",
+        category: 'tarbiyah',
+        desc: "Pusat pendidikan Qur'an berbasis International untuk anak usia dini dengan metode belajar yang menyenangkan dan mudah dipahami.",
+        image: '/history.jpg',
+        link: '/program#baitul-tarbiyah'
+      },
+      {
+        id: 3,
+        title: "Yatim Bahagia",
+        category: 'tarbiyah',
+        desc: "Program sosial santunan bagi santri yatim penghafal Qur'an di lingkungan Baitul Tarbiyah.",
+        image: '/history.jpg',
+        link: '#'
+      },
+      {
+        id: 4,
+        title: "Majelis Berkah Bahagia",
+        category: 'tarbiyah',
+        desc: "Komunitas pemberdayaan umahat (ibu-ibu muslimah) dari jamaah sekitar Baitullah, dengan kajian agama & Qur'an rutin pekanan serta program kemandirian sedekah 'Kampung Sedekah'.",
+        image: '/history.jpg',
+        link: '#'
+      },
+      {
+        id: 5,
+        title: "Kajian Mindshift",
+        category: 'dakwah',
+        desc: "Kajian mingguan yang membangun mindset spiritual dan kemandirian anak muda bersama para pakar pengembangan diri hingga entrepreneur.",
+        image: '/history.jpg',
+        link: '/program#kepemudaan'
+      },
+      {
+        id: 6,
+        title: "Kajian Muslimah",
+        category: 'dakwah',
+        desc: "Pembinaan khusus akhwat/muslimah muda untuk pengembangan diri di dunia kewanitaan yang bersandarkan syariat Islam, 2 kali sepekan.",
+        image: '/history.jpg',
+        link: '/program#kepemudaan'
+      },
+      {
+        id: 7,
+        title: "Dakwah Bil Lisan & Bil Hal",
+        category: 'dakwah',
+        desc: "Masjid aktif menjadi pusat penyebaran Islam lewat ceramah (bil lisan) maupun aksi nyata (bil hal) untuk menyebarkan nilai-nilai Islam ke masyarakat luas.",
+        image: '/history.jpg',
+        link: '#'
+      },
+      {
+        id: 8,
+        title: "Sentra Masjid Indonesia",
+        category: 'muamalah',
+        desc: "Ritel perlengkapan dan pelayanan masjid terpercaya di Indonesia sejak 2013, membawa program Masjid Peradaban 5.0 untuk memakmurkan masjid-masjid di Indonesia.",
+        image: '/history.jpg',
+        link: '#'
+      },
+      {
+        id: 9,
+        title: "Sentra Karpet",
+        category: 'muamalah',
+        desc: "Anak perusahaan Berkah Madani Center sejak 2019, menyediakan dan memasang karpet rumahan, meteran, tile, hingga alas untuk kantor, hotel, dan masjid.",
+        image: '/history.jpg',
+        link: '#'
+      },
+      {
+        id: 10,
+        title: "Pengelolaan ZISWAF Umat",
+        category: 'maal',
+        desc: "Mengelola dana Zakat, Infaq, Sedekah, dan Wakaf secara transparan dan profesional untuk disalurkan kepada program-program kebaikan yang tepat sasaran.",
+        image: '/history.jpg',
+        link: '#'
+      },
+    ]
+  },
+
+  // --- PROGRAM DONASI (Kartu Mendatar dengan Progress Bar) ---
   campaigns: {
     title: "Program Donasi",
     description: "Mari berdonasi untuk program-program pilihan kami.",
@@ -57,19 +133,19 @@ export const homeData = {
         description: "Mari bersama wujudkan pembangunan fasilitas pendidikan dan ibadah untuk para santri penghafal Al-Qur'an.",
         collected: "Rp 15.500.000",
         target: "Rp 50.000.000",
-        progress: 31, 
-        image: "/history.jpg", 
+        progress: 31,
+        image: "/history.jpg",
         link: "/donation/pembangunan"
       },
       {
         id: 2,
         title: "Beasiswa Santri Mukim Qur'an",
         tags: ["Pendidikan", "Zakat"],
-        description: "Dukungan penuh untuk biaya hidup dan pendidikan para santri terpilih yang sedang menghafal Al-Qur'an.",
+        description: "Dukungan penuh untuk biaya hidup dan pendidikan para santri mukim terpilih yang sedang menghafal Al-Qur'an di Lumbung Qur'an.",
         collected: "Rp 8.200.000",
         target: "Rp 20.000.000",
-        progress: 41, 
-        image: "/history.jpg", 
+        progress: 41,
+        image: "/history.jpg",
         link: "/donation/beasiswa"
       }
     ]
