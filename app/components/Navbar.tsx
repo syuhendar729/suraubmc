@@ -110,7 +110,7 @@ export default function Navbar() {
 
         {/* Tombol Gabung (Desktop) */}
         <button className="hidden md:block bg-surau-new-yellow hover:bg-yellow-400 text-surau-blue font-bold px-6 py-2 lg:px-8 lg:py-3 rounded-full text-sm lg:text-lg transition-transform hover:-translate-y-1 shadow-md">
-          Gabung Sekarang
+          Donasi
         </button>
 
         {/* --- TOMBOL HAMBURGER (KHUSUS MOBILE) --- */}
@@ -176,7 +176,7 @@ export default function Navbar() {
           
           {/* Tombol Gabung Mobile */}
           <button onClick={closeMobileMenu} className="mt-4 bg-surau-new-yellow hover:bg-yellow-400 text-surau-blue font-bold px-8 py-3 rounded-full text-base transition-transform hover:-translate-y-1 shadow-md w-full">
-            Gabung Sekarang
+            Donasi
           </button>
         </div>
       )}
