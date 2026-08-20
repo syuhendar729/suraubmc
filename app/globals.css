@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
-
 :root {
-  --background: #FEFAE0;
-  --foreground: #626F47;
+  /* Warna Background Putih Agak Kekuningan (Warm Off-White / Krem Terang) */
+  --background: #faf8ee;
+  /* Warna Teks Utama (Gelap & Sangat Jelas Dibaca) */
+  --foreground: #1e293b;
 }
 
 @theme inline {
@@ -13,21 +14,28 @@
   --font-mono: var(--font-geist-mono);
 
   /* Palet Warna Kustom SurauBMC */
-  --color-surau-dark-green: #626F47;
+  /* --color-surau-dark-green: #626F47;
   --color-surau-light-green: #A4B465;
   --color-surau-yellow: #FFCF50;
-  --color-surau-cream: #FEFAE0;
+  --color-surau-cream: #FEFAE0; */
+
+  /* Palet Warna Kustom Baru (Al-Fatihah Style) */
+  --color-surau-blue: #1157b3;
+  --color-surau-new-yellow: #ffcb2e;
 }
 
+/* KITA KUNCI DARK MODE AGAR TETAP TERANG & TIDAK BERUBAH JADI HITAM */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #faf8ee;
+    --foreground: #1e293b;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Pola bintik-bintik/dot pattern halus yang tetap terang */
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 20px 20px;
 }
