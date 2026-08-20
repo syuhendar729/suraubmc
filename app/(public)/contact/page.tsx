@@ -3,13 +3,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { contactData } from '../data/contactData';
+// Pastikan path import ini sesuai dengan lokasi folder data Anda
+import { contactData } from '../data/contactData'; 
 
 export default function ContactPage() {
-  // Data dummy untuk tautan kontak
-
   return (
-    <div className="min-h-screen bg-surau-cream pb-24">
+    <div className="min-h-screen pb-24">
       
       {/* --- HERO SECTION --- */}
       <section className="relative w-full h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden shadow-lg">
@@ -20,11 +19,11 @@ export default function ContactPage() {
           className="object-cover"
           priority
         />
-        {/* Overlay gelap agar estetis */}
-        <div className="absolute inset-0 bg-surau-dark-green/70"></div>
+        {/* Overlay gelap biru agar estetis */}
+        <div className="absolute inset-0 bg-surau-blue/70"></div>
         
         <div className="relative z-10 text-center px-4">
-          <span className="text-surau-yellow font-bold tracking-widest text-sm md:text-base uppercase mb-3 block">
+          <span className="text-surau-new-yellow font-bold tracking-widest text-sm md:text-base uppercase mb-3 block">
             — Mari Terhubung
           </span>
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
@@ -36,18 +35,18 @@ export default function ContactPage() {
       {/* --- CONTENT SECTION --- */}
       <section className="max-w-4xl mx-auto px-6 pt-16 md:pt-20">
         
-        {/* Judul Bagian Sesuai Wireframe */}
-        <div className="mb-10">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-surau-dark-green relative inline-block">
-            Kontak
-            <div className="absolute -bottom-2 left-0 w-1/2 h-1.5 bg-surau-yellow rounded-full"></div>
+        {/* Judul Bagian */}
+        <div className="mb-10 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-surau-blue relative inline-block">
+            Kontak & Sosial Media
+            <div className="absolute -bottom-2 left-0 w-1/2 md:w-3/4 h-1.5 bg-surau-new-yellow rounded-full"></div>
           </h2>
         </div>
 
         {/* --- GRID TOMBOL KONTAK --- */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-8">
           
-          {/* Baris 1: WhatsApp & Instagram (Dua Kolom di Desktop, Satu Kolom di Mobile) */}
+          {/* Baris 1: WhatsApp & Instagram */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Kartu WhatsApp */}
@@ -55,7 +54,7 @@ export default function ContactPage() {
               href={contactData.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-center justify-center gap-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
+              className="group bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-center justify-center gap-4 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-green-200 transition-all duration-300 text-center"
             >
               <div className="bg-[#25D366]/10 w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
@@ -73,7 +72,7 @@ export default function ContactPage() {
               href={contactData.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-center justify-center gap-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
+              className="group bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-center justify-center gap-4 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-pink-200 transition-all duration-300 text-center"
             >
               <div className="bg-[#E1306C]/10 w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-[#E1306C]" fill="currentColor" viewBox="0 0 24 24">
@@ -85,52 +84,37 @@ export default function ContactPage() {
                 <p className="text-gray-500 text-sm mt-1">Ikuti update terbaru</p>
               </div>
             </a>
-
           </div>
 
-          {/* Baris 2: Daftar Jadi Santri / Volunteer */}
-          <Link 
-            href={contactData.volunteer}
-            className="group bg-surau-dark-green rounded-3xl p-6 md:p-8 flex items-center justify-between gap-4 shadow-lg hover:shadow-2xl hover:bg-[#525d3b] hover:-translate-y-1 transition-all duration-300"
-          >
-            <div className="flex items-center gap-6">
-              <div className="bg-white/10 w-14 h-14 rounded-full flex items-center justify-center shrink-0">
-                <svg className="w-7 h-7 text-surau-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide">Daftar Jadi Santri / Volunteer</h3>
-                <p className="text-surau-cream/80 text-sm md:text-base mt-1">Bergabung dan berikan dampak positif bersama kami</p>
-              </div>
+          {/* --- LOKASI MAPS --- */}
+          <div className="mt-8">
+            <div className="mb-6 text-center md:text-left">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-surau-blue relative inline-block">
+                Kunjungi Kami
+                <div className="absolute -bottom-2 left-0 w-1/2 h-1.5 bg-surau-new-yellow rounded-full"></div>
+              </h2>
+              <p className="text-gray-500 mt-4 text-sm md:text-base">
+                Pusat kegiatan dan operasional Surau BMC
+              </p>
             </div>
-            {/* Panah Kanan */}
-            <div className="bg-surau-yellow text-surau-dark-green w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:translate-x-2 transition-transform">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-            </div>
-          </Link>
 
-          {/* Baris 3: Ajak Masjidmu Go-Digital */}
-          <Link 
-            href={contactData.goDigital}
-            className="group bg-surau-yellow rounded-3xl p-6 md:p-8 flex items-center justify-between gap-4 shadow-lg hover:shadow-2xl hover:bg-[#eab308] hover:-translate-y-1 transition-all duration-300"
-          >
-            <div className="flex items-center gap-6">
-              <div className="bg-surau-dark-green/10 w-14 h-14 rounded-full flex items-center justify-center shrink-0">
-                <svg className="w-7 h-7 text-surau-dark-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+            {/* Container Iframe Maps */}
+            <div className="w-full h-80 md:h-[450px] bg-gray-200 rounded-[2rem] overflow-hidden shadow-lg border-[6px] border-white relative group">
+              {/* Pesan loading */}
+              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                Memuat peta...
               </div>
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-surau-dark-green tracking-wide">Ajak Masjidmu Go-Digital</h3>
-                <p className="text-surau-dark-green/80 text-sm md:text-base mt-1">Berkolaborasi bersama Sentra Masjid Indonesia</p>
-              </div>
+
+              {/* Iframe Google Maps mengambil link dari file data */}
+              <iframe 
+                src={contactData.mapUrl} 
+                className="absolute top-0 left-0 w-full h-full border-0 z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-500" 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
-            {/* Panah Kanan */}
-            <div className="bg-surau-dark-green text-surau-yellow w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:translate-x-2 transition-transform">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-            </div>
-          </Link>
+          </div>
 
         </div>
       </section>

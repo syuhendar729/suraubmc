@@ -24,8 +24,8 @@ export default function Footer() {
   const { companyInfo, socialMedia, linkColumns, copyright } = footerData;
 
   return (
-    <footer className="w-full bg-surau-cream border-t border-surau-dark-green/10 mt-auto">
-      {/* Bagian Utama Footer (Krem) */}
+    <footer className="w-full bg-white border-t border-gray-200 mt-auto">
+      {/* Bagian Utama Footer (Putih) */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16">
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24">
           
@@ -33,17 +33,17 @@ export default function Footer() {
           <div className="w-full lg:w-1/3 flex flex-col gap-6">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div className="bg-surau-dark-green rounded-md shadow-md">
+              <div className="bg-surau-blue rounded-md shadow-md p-1">
                 <Image 
                   src="/logo.jpeg" 
                   alt="Logo Surau BMC" 
-                  width={32} 
-                  height={32} 
-                  className="w-12 h-12 object-contain rounded-md"
+                  width={40} 
+                  height={40} 
+                  className="w-10 h-10 object-contain rounded-md"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-surau-dark-green leading-tight">Surau BMC</span>
+                <span className="text-xl md:text-2xl font-bold text-surau-blue leading-tight">Surau BMC</span>
               </div>
             </div>
             
@@ -60,7 +60,7 @@ export default function Footer() {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-9 h-9 rounded-full flex items-center justify-center ${social.bgColor} hover:opacity-80 hover:-translate-y-1 transition-all duration-300 shadow-md`}
+                  className={`w-9 h-9 rounded-full flex items-center justify-center ${social.bgColor} hover:opacity-90 hover:-translate-y-1 hover:ring-2 hover:ring-surau-new-yellow transition-all duration-300 shadow-md`}
                 >
                   <SocialIcon id={social.id} />
                 </a>
@@ -72,7 +72,7 @@ export default function Footer() {
           <div className="w-full lg:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-8">
             {linkColumns.map((col, index) => (
               <div key={index} className="flex flex-col gap-4">
-                <h3 className="text-lg font-bold text-surau-dark-green">
+                <h3 className="text-lg font-bold text-surau-blue">
                   {col.title}
                 </h3>
                 <ul className="flex flex-col gap-3">
@@ -80,7 +80,7 @@ export default function Footer() {
                     <li key={idx}>
                       <Link 
                         href={link.url}
-                        className="text-gray-600 text-sm md:text-base hover:text-surau-light-green transition-colors"
+                        className="text-gray-600 text-sm md:text-base hover:text-surau-blue hover:underline transition-all"
                       >
                         {link.label}
                       </Link>
@@ -94,9 +94,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bagian Bawah Footer (Hijau Tua) */}
-      <div className="bg-surau-dark-green py-4 px-6 text-center">
-        <p className="text-surau-cream text-sm">
+      {/* Bagian Bawah Footer (Biru Tua dengan Garis Kuning Atas) */}
+      <div className="bg-surau-blue py-4 px-6 text-center border-t-4 border-surau-new-yellow">
+        <p className="text-white text-xs md:text-sm font-medium">
           {copyright}
         </p>
       </div>
