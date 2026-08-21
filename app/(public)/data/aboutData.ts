@@ -1,36 +1,34 @@
 
 export const visionMissionData = {
   header: {
-    label: "— VISI UTAMA",
-    title: "Bukan Sekadar Masjid, Tapi Rumah Tumbuhnya Generasi",
-    description:
-      "Surau BMC ingin menghadirkan model masjid yang tidak hanya jadi tempat ibadah, tapi pusat lahirnya SDM unggul — pemuda yang dibekali ruh spiritual sekaligus kemampuan memimpin dan berwirausaha.",
+    label: "— VISI & MISI",
+    title: "Visi dan Misi Kami",
   },
   cards: [
     {
       id: 1,
-      title: "Cinta Al-Qur'an",
-      description: "Qur'an jadi pusat aktivitas harian — dari ODOJ hingga kajian rutin.",
-      iconName: "book",
+      title: "Cinta Masjid",
+      description: "Masjid dihidupkan sebagai rumah kedua — pusat ibadah, belajar, dan tumbuhnya peradaban.",
+      iconName: "mosque",
     },
     {
       id: 2,
-      title: "Cinta Masjid",
-      description: "Masjid dihidupkan sebagai pusat peradaban, bukan sekadar tempat singgah.",
-      iconName: "mosque",
+      title: "Cinta Al-Qur'an",
+      description: "Al-Qur'an jadi pusat aktivitas harian pemuda-pemudi, dari tahfidz hingga kajian rutin.",
+      iconName: "book",
     },
     {
       id: 3,
       title: "Terdidik & Terpimpin",
-      description: "Dibimbing lewat jenjang pendidikan, mentoring, dan kepemimpinan terstruktur.",
+      description: "Dibina lewat jenjang pendidikan dan kepemimpinan yang terstruktur menuju generasi unggul.",
       iconName: "education",
     },
-    {
-      id: 4,
-      title: "Mandiri & Berdampak",
-      description: "Diarahkan jadi entrepreneur muda yang berdampak nyata bagi umat.",
-      iconName: "sprout",
-    },
+  ],
+  missions: [
+    "Membentuk internal Surau BMC yang kokoh dan profesional.",
+    "Menyusun & mengembangkan kurikulum berbasis kompetensi, program pendidikan dan pelatihan (Diklat) yang disesuaikan dengan kebutuhan.",
+    "Optimalisasi syiar kultural dan digital di internal maupun eksternal Surau.",
+    "Menjadikan Surau sebagai rumah yang nyaman untuk belajar.",
   ],
 };
 

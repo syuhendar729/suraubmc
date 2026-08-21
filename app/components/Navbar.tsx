@@ -5,6 +5,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { programData } from '../(public)/data/programData';
 
 export default function Navbar() {
   // State untuk dropdown menu di desktop & mobile
@@ -25,21 +26,16 @@ export default function Navbar() {
     <nav className="bg-surau-blue p-4 px-6 md:p-6 md:px-12 lg:px-20 border-b border-white/20 sticky top-0 z-50 shadow-md">
       <div className="flex items-center justify-between">
         
-        {/* Bagian Kiri: Logo dan Nama */}
-        <Link href="/" className="flex items-center gap-3 z-50">
-          <div className="bg-white/10 rounded-md shadow-xl">
-            <Image 
-              src="/logo.jpeg" 
-              alt="Logo Surau BMC" 
-              width={40} 
-              height={40} 
-              className="w-10 h-10 object-contain rounded-md"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-bold text-white leading-tight">Surau BMC</span>
-            <span className="text-[10px] md:text-xs text-white/80">Berkah Madani Center</span>
-          </div>
+        {/* Bagian Kiri: Logo */}
+        <Link href="/" className="flex items-center z-50 bg-white rounded-xl px-3 py-1 shadow-md">
+          <Image
+            src="/logo2.png"
+            alt="Logo Surau Berkah Madani Center"
+            width={847}
+            height={295}
+            className="h-14 md:h-14 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* --- MENU DESKTOP --- */}
@@ -90,11 +86,43 @@ export default function Navbar() {
             <div className="absolute top-full left-0 pt-3 hidden group-hover:block z-50 w-max">
               <div className="h-0.5 w-8 bg-surau-new-yellow rounded-full mb-3" />
               <ul className="bg-white rounded-2xl shadow-2xl border border-black/5 p-3 min-w-[220px]">
-                {/* --- LIST DROPDOWN PROGRAM DIPERBARUI DI SINI --- */}
-                <li><Link href="/program#kepemudaan" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Kepemudaan</Link></li>
-                <li><Link href="/program#baitul-tarbiyah" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Baitul Tarbiyah</Link></li>
-                <li><Link href="/program/baitud-dakwah" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Baitud Dakwah</Link></li>
-                <li><Link href="/program/kemasjidan" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Kemasjidan</Link></li>
+                {/* --- LIST DROPDOWN PROGRAM (mengikuti 4 pilar Panca Baitul), tiap pilar punya drop-right berisi programnya --- */}
+                {programData.map((baitul) => (
+                  <li key={baitul.id} className="relative group/baitul">
+                    <Link
+                      href={`/program#${baitul.id}`}
+                      className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors"
+                    >
+                      {baitul.header.title}
+                      <svg className="w-4 h-4 text-slate-400 shrink-0 group-hover/baitul:text-surau-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+
+                    {/* Drop-right: daftar program di dalam pilar ini */}
+                    <div className="absolute top-0 left-full pl-3 hidden group-hover/baitul:block">
+                      <ul className="bg-white rounded-2xl shadow-2xl border border-black/5 p-3 min-w-[240px]">
+                        {baitul.programs.map((program) => {
+                          const isExternal = program.link?.startsWith('http');
+                          const itemClass = "block px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors";
+                          return (
+                            <li key={program.id}>
+                              {isExternal ? (
+                                <a href={program.link} target="_blank" rel="noopener noreferrer" className={itemClass}>
+                                  {program.title}
+                                </a>
+                              ) : (
+                                <Link href={program.link || `/program#${baitul.id}`} className={itemClass}>
+                                  {program.title}
+                                </Link>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </li>
@@ -156,12 +184,34 @@ export default function Navbar() {
             </button>
             
             {isProgramOpen && (
-              <div className="flex flex-col pl-4 mt-2 gap-3 border-l-2 border-white/20">
-                {/* --- LIST DROPDOWN PROGRAM DIPERBARUI DI SINI --- */}
-                <Link href="/program#kepemudaan" onClick={closeMobileMenu} className="text-white/80 hover:text-surau-new-yellow text-sm">Kepemudaan</Link>
-                <Link href="/program#baitul-tarbiyah" onClick={closeMobileMenu} className="text-white/80 hover:text-surau-new-yellow text-sm">Baitul Tarbiyah</Link>
-                <Link href="/program/baitud-dakwah" onClick={closeMobileMenu} className="text-white/80 hover:text-surau-new-yellow text-sm">Baitud Dakwah</Link>
-                <Link href="/program/kemasjidan" onClick={closeMobileMenu} className="text-white/80 hover:text-surau-new-yellow text-sm">Kemasjidan</Link>
+              <div className="flex flex-col mt-2 gap-1 border-l-2 border-white/20 pl-4">
+                {/* --- LIST DROPDOWN PROGRAM (mengikuti 4 pilar Panca Baitul), tiap pilar bisa dibuka lagi untuk lihat programnya --- */}
+                {programData.map((baitul) => (
+                  <details key={baitul.id} className="group/baitul">
+                    <summary className="flex items-center justify-between gap-2 py-2 text-white/80 hover:text-surau-new-yellow text-sm cursor-pointer list-none">
+                      <Link href={`/program#${baitul.id}`} onClick={closeMobileMenu}>
+                        {baitul.header.title}
+                      </Link>
+                      <svg className="w-3.5 h-3.5 transition-transform duration-200 group-open/baitul:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </summary>
+                    <div className="flex flex-col pl-4 pb-2 gap-2 border-l-2 border-white/10">
+                      {baitul.programs.map((program) => {
+                        const isExternal = program.link?.startsWith('http');
+                        return isExternal ? (
+                          <a key={program.id} href={program.link} target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu} className="text-white/70 hover:text-surau-new-yellow text-xs">
+                            {program.title}
+                          </a>
+                        ) : (
+                          <Link key={program.id} href={program.link || `/program#${baitul.id}`} onClick={closeMobileMenu} className="text-white/70 hover:text-surau-new-yellow text-xs">
+                            {program.title}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </details>
+                ))}
               </div>
             )}
           </div>

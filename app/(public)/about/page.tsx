@@ -27,8 +27,6 @@ const RenderIcon = ({ name, className = "w-6 h-6" }: { name: string, className?:
       return <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>;
     case 'education':
       return <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" /></svg>;
-    case 'sprout':
-      return <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" /></svg>;
     default: return null;
   }
 };
@@ -91,23 +89,32 @@ export default function AboutPage() {
       {/* ===== SECTION 2: VISION & MISSION ===== */}
       <section id="visi-misi" className="py-20 px-4 md:px-12 lg:px-24 border-t border-gray-200">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <span className="text-[#ffcb2e] font-bold tracking-widest text-xs uppercase mb-4 block">
               {visionMissionData.header.label}
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1157b3] leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1157b3] leading-tight">
               {visionMissionData.header.title}
             </h2>
-            <p className="text-gray-600 text-lg md:text-lg leading-relaxed">
-              {visionMissionData.header.description}
+          </div>
+
+          {/* Pernyataan Visi */}
+          <div className="relative bg-[#1157b3] rounded-[2.5rem] px-6 py-12 md:px-16 md:py-16 mb-16 overflow-hidden shadow-xl">
+            <svg className="absolute -top-4 -left-4 w-28 h-28 text-white/10" fill="currentColor" viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+            <p className="relative text-white text-xl md:text-3xl lg:text-4xl font-bold leading-snug md:leading-tight text-center max-w-4xl mx-auto">
+              Menjadi pusat inkubator pemuda-pemudi yang{' '}
+              <span className="text-[#ffcb2e]">Cinta Masjid</span> dan{' '}
+              <span className="text-[#ffcb2e]">Cinta Qur&apos;an</span> dalam mewujudkan generasi yang{' '}
+              <span className="text-[#ffcb2e]">Terdidik &amp; Terpimpin</span>.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* 3 Nilai Inti Visi */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20">
             {visionMissionData.cards.map((card) => (
-              <div 
-                key={card.id} 
-                className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col"
+              <div
+                key={card.id}
+                className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center"
               >
                 <div className="bg-[#1157b3] w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-md">
                   <RenderIcon name={card.iconName} />
@@ -117,6 +124,31 @@ export default function AboutPage() {
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
                   {card.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Misi */}
+          <div className="max-w-2xl mx-auto text-center mb-10">
+            <span className="text-[#ffcb2e] font-bold tracking-widest text-xs uppercase mb-3 block">
+              — MISI KAMI
+            </span>
+            <h3 className="text-2xl md:text-3xl font-extrabold text-[#1157b3]">
+              Empat Langkah Mewujudkan Visi
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+            {visionMissionData.missions.map((mission, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-4 bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <span className="shrink-0 w-9 h-9 rounded-full bg-[#1157b3] text-[#ffcb2e] font-bold flex items-center justify-center text-sm">
+                  {i + 1}
+                </span>
+                <p className="text-gray-700 text-sm md:text-base leading-relaxed pt-1">
+                  {mission}
                 </p>
               </div>
             ))}

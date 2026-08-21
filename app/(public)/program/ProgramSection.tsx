@@ -1,6 +1,7 @@
 // File: src/app/program/ProgramSection.tsx
 // Section yang dipakai berulang di halaman /program untuk tiap kategori (Kepemudaan, Baitul Tarbiyah, dst.)
 
+import Link from "next/link";
 import ProgramIcon from "./ProgramIcon";
 
 type ProgramDetail = {
@@ -17,13 +18,14 @@ type ProgramItem = {
   imagePosition: "left" | "right";
   details: ProgramDetail[];
   buttonText: string;
+  link: string;
 };
 
 type ProgramSectionData = {
   header: {
     badge: string;
     title: string;
-    description: string;
+    description: string[];
   };
   programs: ProgramItem[];
 };
@@ -49,9 +51,13 @@ export default function ProgramSection({
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
           {data.header.title}
         </h1>
-        <p className="text-gray-500 text-base md:text-lg leading-relaxed">
-          {data.header.description}
-        </p>
+        <div className="flex flex-col gap-4">
+          {data.header.description.map((paragraph, i) => (
+            <p key={i} className="text-gray-500 text-base md:text-lg leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
 
       <div className="max-w-6xl mx-auto flex flex-col gap-8">
@@ -88,9 +94,23 @@ export default function ProgramSection({
                 ))}
               </div>
 
-              <button className="bg-surau-new-yellow hover:bg-yellow-400 text-surau-blue font-bold px-8 py-3 rounded-full transition-transform hover:-translate-y-1 shadow-md">
-                {program.buttonText}
-              </button>
+              {program.link?.startsWith("http") ? (
+                <a
+                  href={program.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-surau-new-yellow hover:bg-yellow-400 text-surau-blue font-bold px-8 py-3 rounded-full transition-transform hover:-translate-y-1 shadow-md"
+                >
+                  {program.buttonText}
+                </a>
+              ) : (
+                <Link
+                  href={program.link}
+                  className="inline-block bg-surau-new-yellow hover:bg-yellow-400 text-surau-blue font-bold px-8 py-3 rounded-full transition-transform hover:-translate-y-1 shadow-md"
+                >
+                  {program.buttonText}
+                </Link>
+              )}
             </div>
           </div>
         ))}
