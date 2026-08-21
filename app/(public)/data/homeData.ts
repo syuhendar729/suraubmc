@@ -30,10 +30,10 @@ export const homeData = {
     description: "Program-program Surau BMC yang dijalankan melalui pilar-pilar kemakmuran organisasi (Panca Baitul).",
     filters: [
       { id: 'semua', title: 'Semua Program', desc: 'Seluruh program di lingkungan Surau BMC' },
-      { id: 'tarbiyah', title: 'Baitul Tarbiyah', desc: "Pusat pendidikan Qur'an dan pendidikan umum" },
-      { id: 'dakwah', title: 'Baitud Dakwah', desc: 'Syiar Islam lewat dakwah bil lisan dan bil hal' },
       { id: 'muamalah', title: 'Baitul Muamalah', desc: 'Kemandirian ekonomi lewat unit usaha profesional' },
-      { id: 'maal', title: 'Baitul Maal', desc: 'Pengelolaan dana ZISWAF umat secara transparan' },
+      { id: 'tarbiyah', title: 'Baitul Tarbiyah', desc: "Pusat pendidikan Qur'an dan pendidikan umum" },
+      { id: 'maal', title: 'Baitulmaal', desc: 'Pengelolaan dana ZISWAF umat secara transparan' },
+      { id: 'dakwah', title: 'Baituddakwah', desc: 'Syiar Islam lewat dakwah bil lisan dan bil hal' },
     ],
     items: [
       {
@@ -74,7 +74,7 @@ export const homeData = {
         category: 'dakwah',
         desc: "Kajian mingguan yang membangun mindset spiritual dan kemandirian anak muda bersama para pakar pengembangan diri hingga entrepreneur.",
         image: '/history.jpg',
-        link: '/program#kepemudaan'
+        link: '/program#baituddakwah'
       },
       {
         id: 6,
@@ -82,7 +82,7 @@ export const homeData = {
         category: 'dakwah',
         desc: "Pembinaan khusus akhwat/muslimah muda untuk pengembangan diri di dunia kewanitaan yang bersandarkan syariat Islam, 2 kali sepekan.",
         image: '/history.jpg',
-        link: '/program#kepemudaan'
+        link: '/program#baituddakwah'
       },
       {
         id: 7,

@@ -106,7 +106,7 @@ export default function HomePage() {
 
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           {/* KOLOM KIRI: Sidebar Filter */}
-          <div className="w-full lg:w-1/3 xl:w-1/4 flex flex-col gap-3 sticky top-24">
+          <div className="w-full lg:w-1/3 xl:w-1/4 flex flex-col gap-3 lg:sticky lg:top-24">
             {ourPrograms.filters.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
