@@ -51,57 +51,52 @@ export default function Navbar() {
             </Link>
           </li>
 
-          {/* Menu About dengan Dropdown (Desktop) */}
-          <li className="relative">
-            <Link 
+          {/* Menu About dengan Dropdown (Desktop) — hover langsung terbuka */}
+          <li className="relative group">
+            <Link
               href="/about"
-              onClick={() => {
-                setIsAboutOpen(!isAboutOpen);
-                setIsProgramOpen(false);
-              }}
-              className="text-white flex items-center gap-2 font-medium hover:text-surau-new-yellow transition-colors relative z-50 cursor-pointer"
+              className="text-white flex items-center gap-1.5 font-medium hover:text-surau-new-yellow transition-colors relative z-50 cursor-pointer py-2"
             >
-              Tentang <span>{isAboutOpen ? '▴' : '▾'}</span>
+              Tentang
+              <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
             </Link>
-            
-            {isAboutOpen && (
-              <>
-                <div className="fixed inset-0 z-40" onClick={() => setIsAboutOpen(false)}></div>
-                <ul className="absolute top-full left-0 mt-2 bg-surau-blue border border-white/20 rounded-xl shadow-2xl z-50 p-3 min-w-[180px]">
-                  <li><Link href="/about#sejarah" onClick={() => setIsAboutOpen(false)} className="block w-full text-left p-2 rounded-md text-white hover:bg-white/10 hover:text-surau-new-yellow transition-colors">Sejarah</Link></li>
-                  <li><Link href="/about#visi-misi" onClick={() => setIsAboutOpen(false)} className="block w-full text-left p-2 rounded-md text-white hover:bg-white/10 hover:text-surau-new-yellow transition-colors">Visi dan Misi</Link></li>
-                  <li><Link href="/about#lima-pilar" onClick={() => setIsAboutOpen(false)} className="block w-full text-left p-2 rounded-md text-white hover:bg-white/10 hover:text-surau-new-yellow transition-colors">Lima Pilar</Link></li>
-                  <li><Link href="/about#enam-nilai" onClick={() => setIsAboutOpen(false)} className="block w-full text-left p-2 rounded-md text-white hover:bg-white/10 hover:text-surau-new-yellow transition-colors">Enam Nilai</Link></li>
-                  <li><Link href="/about#lokasi" onClick={() => setIsAboutOpen(false)} className="block w-full text-left p-2 rounded-md text-white hover:bg-white/10 hover:text-surau-new-yellow transition-colors">Lokasi</Link></li>
-                </ul>
-              </>
-            )}
+
+            <div className="absolute top-full left-0 pt-3 hidden group-hover:block z-50 w-max">
+              <div className="h-0.5 w-8 bg-surau-new-yellow rounded-full mb-3" />
+              <ul className="bg-white rounded-2xl shadow-2xl border border-black/5 p-3 min-w-[200px]">
+                <li><Link href="/about#sejarah" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Sejarah</Link></li>
+                <li><Link href="/about#visi-misi" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Visi dan Misi</Link></li>
+                <li><Link href="/about#lima-pilar" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Lima Pilar</Link></li>
+                <li><Link href="/about#enam-nilai" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Enam Nilai</Link></li>
+                <li><Link href="/about#lokasi" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Lokasi</Link></li>
+              </ul>
+            </div>
           </li>
 
-          {/* Menu Program dengan Dropdown (Desktop) */}
-          <li className="relative">
-            <button 
-              onClick={() => {
-                setIsProgramOpen(!isProgramOpen);
-                setIsAboutOpen(false); // Pastikan dropdown tentang tertutup
-              }}
-              className="text-white flex items-center gap-2 font-medium hover:text-surau-new-yellow transition-colors relative z-50"
+          {/* Menu Program dengan Dropdown (Desktop) — hover langsung terbuka */}
+          <li className="relative group">
+            <Link
+              href="/program"
+              className="text-white flex items-center gap-1.5 font-medium hover:text-surau-new-yellow transition-colors relative z-50 cursor-pointer py-2"
             >
-              Program <span>{isProgramOpen ? '▴' : '▾'}</span>
-            </button>
-            
-            {isProgramOpen && (
-              <>
-                <div className="fixed inset-0 z-40" onClick={() => setIsProgramOpen(false)}></div>
-                <ul className="absolute top-full left-0 mt-2 bg-surau-blue border border-white/20 rounded-xl shadow-2xl z-50 p-3 min-w-[200px]">
-                  {/* --- LIST DROPDOWN PROGRAM DIPERBARUI DI SINI --- */}
-                  <li><Link href="/program#kepemudaan" onClick={() => setIsProgramOpen(false)} className="block w-full text-left p-2 rounded-md text-white hover:bg-white/10 hover:text-surau-new-yellow transition-colors">Kepemudaan</Link></li>
-                  <li><Link href="/program#baitul-tarbiyah" onClick={() => setIsProgramOpen(false)} className="block w-full text-left p-2 rounded-md text-white hover:bg-white/10 hover:text-surau-new-yellow transition-colors">Baitul Tarbiyah</Link></li>
-                  <li><Link href="/program/baitud-dakwah" onClick={() => setIsProgramOpen(false)} className="block w-full text-left p-2 rounded-md text-white hover:bg-white/10 hover:text-surau-new-yellow transition-colors">Baitud Dakwah</Link></li>
-                  <li><Link href="/program/kemasjidan" onClick={() => setIsProgramOpen(false)} className="block w-full text-left p-2 rounded-md text-white hover:bg-white/10 hover:text-surau-new-yellow transition-colors">Kemasjidan</Link></li>
-                </ul>
-              </>
-            )}
+              Program
+              <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </Link>
+
+            <div className="absolute top-full left-0 pt-3 hidden group-hover:block z-50 w-max">
+              <div className="h-0.5 w-8 bg-surau-new-yellow rounded-full mb-3" />
+              <ul className="bg-white rounded-2xl shadow-2xl border border-black/5 p-3 min-w-[220px]">
+                {/* --- LIST DROPDOWN PROGRAM DIPERBARUI DI SINI --- */}
+                <li><Link href="/program#kepemudaan" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Kepemudaan</Link></li>
+                <li><Link href="/program#baitul-tarbiyah" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Baitul Tarbiyah</Link></li>
+                <li><Link href="/program/baitud-dakwah" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Baitud Dakwah</Link></li>
+                <li><Link href="/program/kemasjidan" className="flex items-center justify-between gap-4 px-4 py-2.5 rounded-xl text-slate-700 font-semibold hover:bg-surau-blue/10 hover:text-surau-blue transition-colors">Kemasjidan</Link></li>
+              </ul>
+            </div>
           </li>
 
           <li><Link href="/contact" className="text-white font-medium hover:text-surau-new-yellow transition-colors">Kontak</Link></li>
